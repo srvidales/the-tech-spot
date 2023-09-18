@@ -1,0 +1,18 @@
+{
+  "name": "the-tech-spot",
+  "version": "1.0.0",
+  "description": "The premier tech blog in all of <my-domain>.com",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "sequelize",
+    "MVC",
+    "tech",
+    "blog"
+  ],
+  "author": "Sergio R. Vidales Perez",
+  "license": "MIT"
+}
