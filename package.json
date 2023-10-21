@@ -4,7 +4,9 @@
   "description": "The premier tech blog in all of <my-domain>.com",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/seed.js"
   },
   "keywords": [
     "express",
@@ -19,6 +21,7 @@
     "bcrypt": "^5.1.1",
     "connect-session-sequelize": "^7.1.7",
     "dotenv": "^16.3.1",
+    "express": "^4.18.2",
     "express-handlebars": "^7.1.2",
     "express-session": "^1.17.3",
     "mysql2": "^3.6.1",
