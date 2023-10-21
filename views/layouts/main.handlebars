@@ -14,13 +14,12 @@
     <header class="display-flex justify-space-between align-center p-2" style="background-color: #lightblue">
       <nav>
         <!-- Conditionally render login or logout links -->
-        <a href="/" style="color: #d9ead3;">Home</a>
-        <a href="/dashboard" style="color: #d9ead3;">Dashboard</a>
-        <p>logged_in = {{logged_in}}</p>
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
         {{#if logged_in}}
         <button class="no-button" id="logout">logout</button>
         {{else}}
-        <a id="logout" href="/login" style="color: #d9ead3;">Login</a>
+        <a id="logout" href="/login">Login</a>
         {{/if}}
       </nav>
       <h1>The Tech Blog</h1>
