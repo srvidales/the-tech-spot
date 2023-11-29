@@ -18,9 +18,32 @@ router.get('/', async (req, res) => {
     const posts = postData.map((post) => post.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', {
+    res.render('all-posts', {
+      layout: 'main',
       posts,
       logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/post/:id', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const post = postData.get({ plain: true });
+
+    res.render('post', {
+      ...post,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -57,13 +80,20 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render('dashboard', {
+    res.render('all-posts-admin', {
+      layout: 'dashboard',
       ...user,
       logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);
   }
+});
+
+router.get('/dashboard/new', withAuth, async (req, res) => {
+  res.render('new-post', {
+    layout: 'dashboard'
+  });
 });
 
 module.exports = router;

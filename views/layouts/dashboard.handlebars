@@ -23,14 +23,14 @@
         <a id="logout" href="/login">Login</a>
         {{/if}}
       </nav>
-      <h1>The Tech Blog</h1>
+      <h1>Your Dashboard</h1>
     </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
     <footer>
-      
+
     </footer>
   </div>
 
@@ -39,5 +39,8 @@
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
+
+<button id="new-post">New Post</button>
+<script src="/js/new-post.js"></script>
 
 </html>
