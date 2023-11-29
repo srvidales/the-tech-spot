@@ -42,9 +42,9 @@ router.get('/post/:id', withAuth, async (req, res) => {
             {
               model: User,
               attributes: ['name'],
-            }
-          ]
-        }
+            },
+          ],
+        },
       ],
     });
 
@@ -53,7 +53,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
     res.render('single-post', {
       layout: 'main',
       post,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -93,7 +93,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     res.render('all-posts-admin', {
       layout: 'dashboard',
       ...user,
-      logged_in: true
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -102,7 +102,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
 router.get('/dashboard/new', withAuth, async (req, res) => {
   res.render('new-post', {
-    layout: 'dashboard'
+    layout: 'dashboard',
   });
 });
 

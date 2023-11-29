@@ -30,17 +30,19 @@
       {{{ body }}}
     </main>
     <footer>
-
+      {{#if logged_in}}
+      <button id="new-post">New Post</button>
+      {{/if}}
     </footer>
   </div>
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
+  <script src="/js/dashboard.js"></script>
   {{/if}}
 </body>
 
-<button id="new-post">New Post</button>
 <script src="/js/new-post.js"></script>
 
 </html>
