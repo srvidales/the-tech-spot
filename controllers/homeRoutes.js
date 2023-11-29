@@ -110,7 +110,7 @@ router.get('/dashboard/edit/:id', withAuth, async (req, res) => {
   try {
     // Get all posts owned by the logged in user
 
-    const postData = await Post.findByPk(req.session.user_id);
+    const postData = await Post.findByPk(req.params.id);
 
     // Serialize data so the template can read it
     const post = postData.get({ plain: true });
