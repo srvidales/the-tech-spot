@@ -10,4 +10,18 @@
   <div class='col-md-7'>
     <p>Posted by {{post.user.name}} on {{format_date post.date_created}}</p>
   </div>
+  <p>Comments go here:</p>
+</div>
+
+{{#each post.comments as |comment|}}
+<div>
+  <h3>{{comment.content}}</h3>
+  <h4>--{{comment.user.name}}, {{comment.date_created}}</h4>
+</div>
+{{/each}}
+
+<p>Comment</p>
+<div>
+  <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+  <button id="comment-submit">Submit</button>
 </div>
