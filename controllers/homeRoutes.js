@@ -106,4 +106,23 @@ router.get('/dashboard/new', withAuth, async (req, res) => {
   });
 });
 
+router.get('/dashboard/edit/:id', withAuth, async (req, res) => {
+  try {
+    // Get all posts owned by the logged in user
+
+    const postData = await Post.findByPk(req.session.user_id);
+
+    // Serialize data so the template can read it
+    const post = postData.get({ plain: true });
+
+    // Pass serialized data and session flag into template
+    res.render('edit-post', {
+      layout: 'dashboard',
+      post,
+    });
+  } catch (err) {
+    res.redirect('login');
+  }
+})
+
 module.exports = router;

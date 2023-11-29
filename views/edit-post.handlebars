@@ -1,0 +1,16 @@
+<form class="form update-post-form">
+    <div class="form-group">
+        <label for="post-title">Title:</label>
+        <input class="form-input" type="text" id="post-title" name="post-title" value="{{post.title}}"/>
+    </div>
+    <div class="form-group">
+        <label for="post-content">description:</label>
+        <textarea class="form-input" id="post-content" name="post-content">{{post.description}}</textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Update</button>
+        <button id="button-delete">Delete</button>
+    </div>
+</form>
+
+<script src="./js/edit.js"></script>
