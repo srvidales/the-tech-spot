@@ -10,7 +10,6 @@
   <div class='col-md-7'>
     <p>Posted by {{post.user.name}} on {{format_date post.date_created}}</p>
   </div>
-  <p>Comments go here:</p>
 </div>
 
 {{#each post.comments as |comment|}}
@@ -20,8 +19,14 @@
 </div>
 {{/each}}
 
-<p>Comment</p>
-<div>
-  <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
-  <button id="comment-submit">Submit</button>
-</div>
+<form class="form new-comment-form" data-id="{{post.id}}">
+    <div class="form-group">
+        <label for="comment-content">Comment:</label>
+        <textarea class="form-input" id="comment-content" name="comment-content"></textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+<script type="text/javascript" src="/js/single-post.js"></script>
