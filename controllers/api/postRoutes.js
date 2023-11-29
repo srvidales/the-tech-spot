@@ -20,6 +20,28 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+router.put('/:id', withAuth, async (req, res) => {
+  const postId = req.params.id;
+  const { title, description } = req.body;
+
+  try {
+    const post = await Post.findByPk(postId);
+
+    if (!post) {
+      return res.status(404).json({ message: 'Post not found!' });
+    }
+
+    await post.update({
+      title,
+      description,
+    });
+
+    res.status(200).json({ title, description });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.destroy({
