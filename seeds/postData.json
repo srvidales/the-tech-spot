@@ -1,15 +1,15 @@
 [
     {
-      "title": "Music Near Me",
-      "description": "A mobile app that will send you notifications whenever a concert is playing in your area."
+      "title": "AI is amazing and super cool!",
+      "description": "Explore the incredible advancements and captivating potential of artificial intelligence, as we delve into how AI is reshaping our world in amazing and super cool ways!"
     },
     {
-      "title": "The Ultimate Tech Quiz",
-      "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!"
+      "title": "Design patterns why care?",
+      "description": "Explore the transformative power of design patterns in software development and understand why they are crucial for efficient, scalable, and maintainable code."
     },
     {
-      "title": "Roll 'Em Up",
-      "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes."
+      "title": "Is React better than Angular?",
+      "description": "Exploring the strengths and weaknesses of React and Angular to determine which one stands out as the superior choice for modern web development."
     }
   ]
   
